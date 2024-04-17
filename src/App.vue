@@ -10,7 +10,7 @@ import axios from "axios";
 import { store } from "./store";
 export default {
   name: "App",
-  components:{
+  components: {
     HeaderComponent,
     MainComponent,
   },
@@ -25,6 +25,8 @@ export default {
         .get(this.store.baseUrl + this.store.endpoint.movie, this.store.options)
         .then((res) => {
           console.log(res.data.results);
+          this.store.movieList = res.data.results;
+          console.log(this.store.movieList);
         });
     },
     getTvSeries() {
@@ -32,12 +34,14 @@ export default {
         .get(this.store.baseUrl + this.store.endpoint.tv, this.store.options)
         .then((res) => {
           console.log(res.data.results);
+          this.store.seriesList = res.data.results;
+          console.log(this.store.seriesList);
         });
     },
   },
   created() {
-    // this.getMovies();
-    // this.getTvSeries(); test fatto tutto ok
+    this.getMovies();
+    this.getTvSeries(); //test fatto tutto ok
   },
 };
 </script>
