@@ -6,8 +6,8 @@ export const store = reactive({
     movie: "search/movie",
     tv: "search/tv",
   },
-  movieList: [],
-  seriesList: [],
+  movieList: [], //array dei film preso da axios
+  seriesList: [], //array delle serie tv preso da axios
   options: {
     params: {
       api_key: "538b11410bba968d24477005677a8a52",
