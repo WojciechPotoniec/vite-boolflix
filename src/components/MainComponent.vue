@@ -1,27 +1,26 @@
 <template>
-    <main>
-        <CardComponent />
-    </main>
+  <main>
+    <CardList />
+  </main>
 </template>
 
 <script>
-import CardComponent from "./CardComponent.vue";
-    export default {
-        name: "MainComponent",
-        components: {
-            CardComponent,
-        },
-        data() {
-            return {
-                
-            }
-        }
-    }
+import CardList from "./CardList.vue";
+export default {
+  name: "MainComponent",
+  components: {
+    CardList,
+  },
+  data() {
+    return {};
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-main{
-    height: calc(100vh - 79px);
-    background-color: #434343;
+main {
+  height: calc(100vh - 79px);
+  overflow-y: auto;
+  background-color: #434343;
 }
 </style>
