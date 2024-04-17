@@ -1,10 +1,5 @@
 <template>
-  <div class="card">
     <img :src="img" class="card-img-top" :alt="title" />
-    <div class="card-body">
-      <h5 class="card-title">{{ title }}</h5>
-    </div>
-  </div>
 </template>
 
 <script>
@@ -16,5 +11,8 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+img {
+  aspect-ratio: 2 / 3;
+}
+</style>
