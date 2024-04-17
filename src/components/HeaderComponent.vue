@@ -12,7 +12,7 @@
             aria-label="Sizing example input"
             aria-describedby="inputGroup-sizing-sm"
           />
-          <button>Cerca</button>
+          <button class="btn btn-light">Cerca</button>
         </div>
       </div>
     </div>
