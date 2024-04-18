@@ -1,5 +1,5 @@
 <template>
-    <img :src="img" class="card-img-top" :alt="title" />
+  <img :src="img" class="card-img-top" :alt="title" />
 </template>
 
 <script>
