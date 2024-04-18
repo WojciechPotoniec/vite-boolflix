@@ -27,6 +27,10 @@ export default {
           console.log(res.data.results);
           this.store.movieList = res.data.results;
           console.log(this.store.movieList);
+        }).catch((error) => {
+          console.log(error);
+        }).finally(() => {
+          console.log('finally');
         });
     },
     getTvSeries() {
@@ -36,6 +40,10 @@ export default {
           console.log(res.data.results);
           this.store.seriesList = res.data.results;
           console.log(this.store.seriesList);
+        }).catch((error) => {
+          console.log(error);
+        }).finally(() => {
+          console.log('finally');
         });
     },
   },
