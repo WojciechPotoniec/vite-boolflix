@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div class="container p-3">
+    <div class="container-fluid p-3">
       <div id="logo">
         <img :src="img" alt="Netflix Logo" />
       </div>
