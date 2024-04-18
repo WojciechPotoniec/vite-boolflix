@@ -2,17 +2,17 @@
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
-        <img :src="img" class="card-img-top" :alt="original_title" />
+        <img :src="img" class="card-img-top" :alt="original_title"/>
       </div>
       <div class="flip-card-back">
-        <h6 class="card-title">{{ title }}</h6>
+        <h5 class="card-title">{{ title }}</h5>
         <small class="card-text">{{ original_title }}</small>
         <div class="flag">
-          <img :src="imgFlag" :alt="language" />
+          <img :src="imgFlag" :alt="language"/>
         </div>
         <div class="stars">
           <i
-            :class="{ 'fa-solid': n <= vote, 'fa-regular': n > vote }"
+            :class="{ 'fa-solid': n <= voteStars, 'fa-regular': n > voteStars }"
             class="fa-star"
             v-for="n in 5"
           ></i>
@@ -36,9 +36,12 @@ export default {
       if (this.flags.includes(this.language)) {
         return `/img/${this.language}.svg.png`;
       } else {
-        return `/img/placeholder.png`;
+        return `/img/Missing_flag.png`;
       }
     },
+    voteStars() {
+      return Math.ceil(this.vote / 2);
+    }
   },
 };
 </script>
