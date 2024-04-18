@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="row gx-0 rounded-0">
+    <div class="row gx-0">
       <h2 class="my-3 text-light">Film</h2>
       <div
         class="col-12 col-lg-2 col-md-3 col-sm-6"
@@ -9,7 +9,7 @@
       >
         <CardComponent
           :img="store.imageUrl + movie.poster_path"
-          :title="movie.title"
+          :title="movie.title" :original_title="movie.original_title" :language="movie.original_language" :vote="movie.vote_average"
         />
       </div>
     </div>
@@ -22,7 +22,7 @@
       >
         <CardComponent
           :img="store.imageUrl + series.poster_path"
-          :title="series.title"
+          :title="series.name" :original_title="series.original_name" :language="series.original_language" :vote="series.vote_average"
         />
       </div>
     </div>
@@ -45,4 +45,6 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+</style>
