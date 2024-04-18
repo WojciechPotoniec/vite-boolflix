@@ -2,7 +2,7 @@
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
-        <img :src="img" class="card-img-top" :alt="original_title"/>
+        <img :src="img" class="card-img-top" :alt="original_title" @error="setDefaultImg"/>
       </div>
       <div class="flip-card-back">
         <h5 class="card-title">{{ title }}</h5>
@@ -30,6 +30,11 @@ export default {
     return {
       flags: ["en", "es", "fr", "it", "de"],
     };
+  },
+  methods: {
+    setDefaultImg(event) {
+      event.target.src = "/img/image_not_found.jpg";
+    }
   },
   computed: {
     imgFlag() {
