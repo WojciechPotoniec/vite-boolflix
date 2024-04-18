@@ -1,5 +1,5 @@
 <template>
-  <HeaderComponent />
+  <HeaderComponent @searchApi="getMovies(), getTvSeries()"/>
   <MainComponent />
 </template>
 
