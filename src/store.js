@@ -19,6 +19,7 @@ export const store = reactive({
     },
   },
   imageUrl: "https://image.tmdb.org/t/p/original",
+  loading: false,
 });
 
 //* URL per ottenere le immagini
