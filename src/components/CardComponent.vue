@@ -92,6 +92,7 @@ export default {
   background-color: transparent;
   img {
     aspect-ratio: 1 / 1.5;
+    object-fit: cover;
   }
 }
 
