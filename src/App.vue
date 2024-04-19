@@ -1,11 +1,7 @@
 <template>
   <HeaderComponent @searchApi="getMovies(), getTvSeries()"/>
-  <div v-if="!store.loading">
-    <MainComponent />
-  </div>
-  <div v-else>
-    <Loader />
-  </div>
+    <MainComponent v-if="!store.loading"/>
+    <Loader v-else/>
 </template>
 
 <script>
