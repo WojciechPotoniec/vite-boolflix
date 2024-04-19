@@ -4,10 +4,10 @@
       <div id="logo">
         <img :src="logo.img" :alt="logo.alt" />
       </div>
-      <div class="circle white"></div>
       <div class="circle red"></div>
+      <div class="circle black-1"></div>
       <div class="circle black"></div>
-      <div class="circle yellow"></div>
+      <div class="circle red-1"></div>
     </div>
   </div>
 </template>
@@ -56,27 +56,27 @@ export default {
   border-radius: 50%;
   border-style: solid;
 }
-.white {
+.red {
   border-width: 3px 3px 0 0;
-  border-color: white white transparent transparent;
-  animation: 1s rotate-white linear infinite;
+  border-color: red red transparent transparent;
+  animation: 1s rotate-red linear infinite;
 }
-.yellow {
+.red-1 {
   border-width: 0 0 3px 3px;
-  border-color: transparent transparent yellow yellow;
-  animation: 1s rotate-yellow linear infinite;
+  border-color: transparent transparent red red;
+  animation: 1s rotate-red-1 linear infinite;
 }
 .black {
-  border-width: 0 3px 3px 0;
+  border-width: 0 4px 4px 0;
   border-color: transparent black black transparent;
   animation: 1s rotate-black linear infinite;
 }
-.red {
-  border-width: 3px 0 0 3px;
-  border-color: red transparent transparent red;
-  animation: 1s rotate-red linear infinite;
+.black-1 {
+  border-width: 4px 0 0 4px;
+  border-color: black transparent transparent black;
+  animation: 1s rotate-black-1 linear infinite;
 }
-@keyframes rotate-white {
+@keyframes rotate-red {
   from {
     transform: rotateX(45deg) rotateY(-35deg) rotateZ(0deg);
   }
@@ -84,7 +84,7 @@ export default {
     transform: rotateX(45deg) rotateY(-35deg) rotateZ(360deg);
   }
 }
-@keyframes rotate-yellow {
+@keyframes rotate-red-1 {
   from {
     transform: rotateX(45deg) rotateY(35deg) rotateZ(0deg);
   }
@@ -100,7 +100,7 @@ export default {
     transform: rotateX(70deg) rotateZ(360deg);
   }
 }
-@keyframes rotate-red {
+@keyframes rotate-black-1 {
   from {
     transform: rotateY(70deg) rotateZ(0deg);
   }
