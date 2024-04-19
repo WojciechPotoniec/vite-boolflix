@@ -1,11 +1,17 @@
 <template>
   <HeaderComponent @searchApi="getMovies(), getTvSeries()"/>
-  <MainComponent />
+  <div v-if="!store.loading">
+    <MainComponent />
+  </div>
+  <div v-else>
+    <Loader />
+  </div>
 </template>
 
 <script>
 import HeaderComponent from "./components/HeaderComponent.vue";
 import MainComponent from "./components/MainComponent.vue";
+import Loader from "./components/Loader.vue";
 import axios from "axios";
 import { store } from "./store";
 export default {
@@ -13,6 +19,7 @@ export default {
   components: {
     HeaderComponent,
     MainComponent,
+    Loader,
   },
   data() {
     return {
@@ -21,6 +28,7 @@ export default {
   },
   methods: {
     getMovies() {
+      this.store.loading = true;
       axios
         .get(this.store.baseUrl + this.store.endpoint.movie, this.store.options)
         .then((res) => {
@@ -31,9 +39,13 @@ export default {
           console.log(error);
         }).finally(() => {
           console.log('finally');
+          setTimeout(() => {
+            this.store.loading = false;
+          }, 1500)
         });
     },
     getTvSeries() {
+      this.store.loading = true;
       axios
         .get(this.store.baseUrl + this.store.endpoint.tv, this.store.options)
         .then((res) => {
@@ -44,9 +56,13 @@ export default {
           console.log(error);
         }).finally(() => {
           console.log('finally');
+          setTimeout(() => {
+            this.store.loading = false;
+          }, 1500)
         });
     },
     getPopularMovies() {
+      this.store.loading = true;
       axios
         .get(this.store.baseUrl + this.store.endpoint.moviepopular, this.store.options)
         .then((res) => {
@@ -57,9 +73,13 @@ export default {
           console.log(error);
         }).finally(() => {
           console.log('finally');
+          setTimeout(() => {
+            this.store.loading = false;
+          }, 1500)
         });
     },
     getPopularSeries() {
+      this.store.loading = true;
       axios
         .get(this.store.baseUrl + this.store.endpoint.tvpopular, this.store.options)
         .then((res) => {
@@ -70,6 +90,9 @@ export default {
           console.log(error);
         }).finally(() => {
           console.log('finally');
+          setTimeout(() => {
+            this.store.loading = false;
+          }, 1500)
         });
     },
   },
