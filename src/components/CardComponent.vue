@@ -5,8 +5,8 @@
         <img :src="img" class="card-img-top" :alt="original_title" @error="setDefaultImg"/>
       </div>
       <div class="flip-card-back">
-        <h5 class="card-title">{{ title }}</h5>
-        <small class="card-text">{{ original_title }}</small>
+        <h5 class="card-title">Title: <br>{{ title }}</h5>
+        <small class="card-text">Original title: <br>{{ original_title }}</small>
         <div class="flag">
           <img :src="imgFlag" :alt="language"/>
         </div>
@@ -17,6 +17,7 @@
             v-for="n in 5"
           ></i>
         </div>
+        <p>{{ overview }}</p>
       </div>
     </div>
   </div>
@@ -25,7 +26,7 @@
 <script>
 export default {
   name: "CardComponent",
-  props: ["img", "title", "original_title", "language", "vote"],
+  props: ["img", "title", "original_title", "language", "vote", "overview"],
   data() {
     return {
       flags: ["en", "es", "fr", "it", "de"],
@@ -99,8 +100,21 @@ export default {
   background-color: black;
   color: white;
   transform: rotateY(180deg);
+  overflow-y: scroll;
 }
 .stars {
   color: gold;
 }
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #bebebe;
+  border-radius: 15px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0;
+}
+
 </style>
