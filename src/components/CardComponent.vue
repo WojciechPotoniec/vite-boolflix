@@ -54,6 +54,7 @@ export default {
 .flag {
   height: 25px;
   width: 35px;
+  margin: 10px auto;
   img {
     height: 100%;
     width: 100%;
@@ -67,6 +68,8 @@ export default {
 }
 
 .flip-card-inner {
+  height: 100%;
+  width: 100%;
   position: relative;
   text-align: center;
   transition: transform 0.6s;
@@ -92,6 +95,7 @@ export default {
 }
 
 .flip-card-back {
+  padding: 20px;
   background-color: black;
   color: white;
   transform: rotateY(180deg);
