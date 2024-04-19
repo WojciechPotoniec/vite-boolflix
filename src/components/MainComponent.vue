@@ -23,4 +23,15 @@ main {
   overflow-y: auto;
   background-color: #434343;
 }
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #bebebe;
+  border-radius: 15px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0;
+}
 </style>
