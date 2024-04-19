@@ -5,9 +5,13 @@ export const store = reactive({
   endpoint: {
     movie: "search/movie",
     tv: "search/tv",
+    moviepopular: "movie/popular",
+    tvpopular: "tv/popular",
   },
   movieList: [], //array dei film preso da axios
   seriesList: [], //array delle serie tv preso da axios
+  moviepopularList: [], //array dei film popolari preso da axios
+  seriespopularList: [], //array delle serie tv popolari preso da axios
   options: {
     params: {
       api_key: "538b11410bba968d24477005677a8a52",
