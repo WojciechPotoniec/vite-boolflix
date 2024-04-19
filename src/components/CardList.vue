@@ -9,7 +9,7 @@
       >
         <CardComponent
           :img="store.imageUrl + movie.poster_path"
-          :title="movie.title" :original_title="movie.original_title" :language="movie.original_language" :vote="movie.vote_average"
+          :title="movie.title" :original_title="movie.original_title" :language="movie.original_language" :vote="movie.vote_average" :overview="movie.overview"
         />
       </div>
     </div>
@@ -22,7 +22,7 @@
       >
         <CardComponent
           :img="store.imageUrl + series.poster_path"
-          :title="series.name" :original_title="series.original_name" :language="series.original_language" :vote="series.vote_average"
+          :title="series.name" :original_title="series.original_name" :language="series.original_language" :vote="series.vote_average" :overview="series.overview"
         />
       </div>
     </div>
