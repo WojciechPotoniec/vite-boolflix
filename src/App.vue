@@ -46,10 +46,36 @@ export default {
           console.log('finally');
         });
     },
+    getPopularMovies() {
+      axios
+        .get(this.store.baseUrl + this.store.endpoint.moviepopular, this.store.options)
+        .then((res) => {
+          console.log(res.data.results);
+          this.store.moviepopularList = res.data.results;
+          console.log(this.store.moviepopularList);
+        }).catch((error) => {
+          console.log(error);
+        }).finally(() => {
+          console.log('finally');
+        });
+    },
+    getPopularSeries() {
+      axios
+        .get(this.store.baseUrl + this.store.endpoint.tvpopular, this.store.options)
+        .then((res) => {
+          console.log(res.data.results);
+          this.store.seriespopularList = res.data.results;
+          console.log(this.store.seriespopularList);
+        }).catch((error) => {
+          console.log(error);
+        }).finally(() => {
+          console.log('finally');
+        });
+    },
   },
   created() {
-    this.getMovies();
-    this.getTvSeries(); //test fatto tutto ok
+    this.getPopularMovies();
+    this.getPopularSeries();
   },
 };
 </script>
